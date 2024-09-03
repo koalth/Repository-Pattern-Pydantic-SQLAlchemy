@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "pydantic-repo"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+sqlalchemy = "^2.0.33"
+asyncio = "^3.4.3"
+python-dotenv = "^1.0.1"
+inject = "^5.2.1"
+pydantic = "^2.8.2"
+asyncpg = "^0.29.0"
+alembic = "^1.13.2"
+
+[tool.poetry.scripts]
+main = "pydantic_repo.main:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
