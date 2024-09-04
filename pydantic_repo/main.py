@@ -10,13 +10,14 @@ async def main():
 
     itemService = ItemService()
 
-    item_1_ent = await itemService.create(item_1)
-    print(item_1_ent)
+    # await itemService.create(item_1)
+    # await itemService.create(item_2)
+    # await itemService.create(item_3)
 
-    test_item = await itemService.get(item_1_ent.id)
-    print(test_item)
+    items = await itemService.get_items_in_price_range(3.00, 49.00)
 
-    assert item_1_ent == test_item
+    print(items)
+
 
 def run():
     asyncio.run(main())

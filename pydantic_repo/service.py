@@ -12,3 +12,10 @@ class ItemRepository(GenericRepository[ItemOrm, ItemCreate, ItemUpdate, Item]):
 
 class ItemService(GenericService[ItemOrm, ItemCreate, ItemUpdate, Item]):
     repository = ItemRepository()
+
+    async def get_items_in_price_range(
+        self, min_price: float, max_price: float
+    ) -> List[Item]:
+        return await self.repository.get_all(
+            ItemOrm.price >= min_price, ItemOrm.price <= max_price
+        )
